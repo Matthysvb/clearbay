@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQ — GarageClean</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .faq-list { max-width: 760px; margin: 56px auto 0; display: flex; flex-direction: column; gap: 12px; }
+    .faq-item { background: #fff; border-radius: var(--r); box-shadow: var(--sh); overflow: hidden; border: 1.5px solid transparent; transition: border-color .2s; }
+    .faq-item.open { border-color: var(--border); }
+    .faq-q { width: 100%; display: flex; align-items: center; justify-content: space-between; padding: 22px 26px; background: none; border: none; cursor: pointer; font-family: inherit; text-align: left; gap: 16px; font-size: 16px; font-weight: 600; color: var(--navy); }
+    .faq-chevron { width: 20px; height: 20px; flex-shrink: 0; color: var(--muted); transition: transform .25s; }
+    .faq-item.open .faq-chevron { transform: rotate(180deg); }
+    .faq-a { display: none; padding: 0 26px 24px; font-size: 15px; color: var(--muted); line-height: 1.7; }
+    .faq-item.open .faq-a { display: block; }
+    .faq-divider { border: none; border-top: 1px solid var(--border); margin-bottom: 18px; }
+  </style>
+</head>
+<body>
+
+<div id="nav-placeholder"></div>
+
+<div class="page-header">
+  <div class="container">
+    <div class="label">FAQ</div>
+    <h1 class="h2">Common questions, straight answers.</h1>
+    <p class="sub">Everything you need to know before booking. Still have a question? Just reach out.</p>
+  </div>
+</div>
+
+<section>
+  <div class="container">
+    <div style="text-align:center" class="fi">
+      <div class="label">Questions</div>
+      <h2 class="h2">Frequently Asked Questions</h2>
+    </div>
+    <div class="faq-list fi">
+
+      <div class="faq-item" id="faq1">
+        <button class="faq-q" onclick="toggleFaq('faq1')">How does the pricing work?<svg class="faq-chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="faq-a"><hr class="faq-divider">We give you a flat quote before we start based on your garage size, condition, and the package you choose. That's the number you pay — no hourly billing, no surprise add-ons at the end.</div>
+      </div>
+
+      <div class="faq-item" id="faq2">
+        <button class="faq-q" onclick="toggleFaq('faq2')">Do I need to be home during the cleanout?<svg class="faq-chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="faq-a"><hr class="faq-divider">You don't have to be home the whole time, but we do recommend being available at the start so we can do a quick walkthrough together. This helps us understand what you want to keep, donate, or dispose of before we get to work.</div>
+      </div>
+
+      <div class="faq-item" id="faq3">
+        <button class="faq-q" onclick="toggleFaq('faq3')">What happens to the stuff I don't want?<svg class="faq-chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="faq-a"><hr class="faq-divider">We handle it all. Usable items get donated to local organizations where possible. The rest gets disposed of responsibly. You don't need to make a dump run or arrange anything separately — it's included in your quote.</div>
+      </div>
+
+      <div class="faq-item" id="faq4">
+        <button class="faq-q" onclick="toggleFaq('faq4')">How long does a cleanout take?<svg class="faq-chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="faq-a"><hr class="faq-divider">Most standard and premium jobs are completed in a single visit. Estate or heavily built-up garages may require multiple days. We'll give you a clear timeline as part of your quote so you know exactly what to expect.</div>
+      </div>
+
+      <div class="faq-item" id="faq5">
+        <button class="faq-q" onclick="toggleFaq('faq5')">What areas do you serve?<svg class="faq-chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="faq-a"><hr class="faq-divider">We serve North Vancouver, West Vancouver, and Burnaby. If you're just outside these areas, reach out anyway — we may be able to accommodate depending on availability.</div>
+      </div>
+
+      <div class="faq-item" id="faq6">
+        <button class="faq-q" onclick="toggleFaq('faq6')">Are you insured?<svg class="faq-chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="faq-a"><hr class="faq-divider">Yes. GarageClean is fully insured. In the rare event something is damaged by our crew during a scheduled job, we cover it. See our Damage Policy for full details on what's covered and how to report a claim.</div>
+      </div>
+
+      <div class="faq-item" id="faq7">
+        <button class="faq-q" onclick="toggleFaq('faq7')">How do I cancel or reschedule?<svg class="faq-chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="faq-a"><hr class="faq-divider">We ask for at least 24 hours' notice to cancel or reschedule without a fee. Same-day cancellations may incur a charge. See our Booking &amp; Cancellation Policy for full details.</div>
+      </div>
+
+      <div class="faq-item" id="faq8">
+        <button class="faq-q" onclick="toggleFaq('faq8')">What payment methods do you accept?<svg class="faq-chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="faq-a"><hr class="faq-divider">We accept Visa, Mastercard, American Express, and e-transfer. Payment is due upon completion of the job unless otherwise agreed in writing. Large or estate jobs may require a deposit upfront.</div>
+      </div>
+
+      <div class="faq-item" id="faq9">
+        <button class="faq-q" onclick="toggleFaq('faq9')">What if I'm not happy with the result?<svg class="faq-chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="faq-a"><hr class="faq-divider">Contact us within 24 hours of your service completion and we'll make it right. We'll review your concerns and re-clean any areas that fall within the original scope at no extra charge.</div>
+      </div>
+
+      <div class="faq-item" id="faq10">
+        <button class="faq-q" onclick="toggleFaq('faq10')">Can you handle hazardous materials or mold?<svg class="faq-chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="faq-a"><hr class="faq-divider">Mold remediation, biohazard cleanup, and hazardous materials removal (paint, fuel, chemicals) are outside our standard scope. If you have concerns about these, mention it when you request your quote and we can point you in the right direction.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══ CTA ══ -->
+<section style="background:var(--navy);text-align:center">
+  <div class="container fi">
+    <div class="label" style="color:var(--blue-lite)">Still have questions?</div>
+    <h2 class="h2" style="color:#fff;margin:0 auto 16px">Just reach out — we're happy to help.</h2>
+    <p class="sub" style="margin:0 auto 36px;color:rgba(255,255,255,.55)">Request a free quote and ask us anything. We'll respond within 24 hours.</p>
+    <a href="contact.html" class="btn btn-primary">Contact Us</a>
+  </div>
+</section>
+
+<div id="footer-placeholder"></div>
+<script src="shared.js"></script>
+<script>
+  function toggleFaq(id) {
+    var item = document.getElementById(id);
+    var isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(function(el) { el.classList.remove('open'); });
+    if (!isOpen) item.classList.add('open');
+  }
+</script>
+</body>
+</html>

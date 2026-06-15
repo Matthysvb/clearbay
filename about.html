@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us — GarageClean</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* ── Stats bar ── */
+    .stats-bar { background: var(--blue); padding: 56px 0; }
+    .stats-row { display: grid; grid-template-columns: repeat(4,1fr); gap: 32px; text-align: center; }
+    .stat-box {}
+    .stat-box .num { font-size: clamp(40px, 5vw, 60px); font-weight: 900; color: #fff; letter-spacing: -.03em; line-height: 1; }
+    .stat-box .lbl { font-size: 14px; color: rgba(255,255,255,.65); margin-top: 8px; font-weight: 500; }
+    /* ── Values ── */
+    .values-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 24px; margin-top: 48px; }
+    .value-card { background: var(--bg); border-radius: var(--r); padding: 32px; border-left: 4px solid var(--blue); }
+    .value-card h3 { font-size: 17px; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+    .value-card p  { font-size: 15px; color: var(--muted); line-height: 1.6; }
+    /* ── Story ── */
+    .story-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; }
+    @media (max-width: 800px) {
+      .stats-row { grid-template-columns: repeat(2,1fr); }
+      .values-grid { grid-template-columns: 1fr; }
+      .story-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<div id="nav-placeholder"></div>
+
+<!-- ══ HEADER ══ -->
+<div class="page-header">
+  <div class="container">
+    <div class="label">Who We Are</div>
+    <h1 class="h2">Built to make your garage actually work.</h1>
+    <p class="sub">GarageClean is a locally owned garage cleanout service serving homeowners across North Vancouver, West Vancouver, and Burnaby.</p>
+  </div>
+</div>
+
+<!-- ══ STATS ══ -->
+<div class="stats-bar">
+  <div class="container">
+    <div class="stats-row fi">
+      <!-- TODO: Update these numbers as you grow -->
+      <div class="stat-box"><div class="num">2026</div><div class="lbl">EST Since</div></div>
+      <div class="stat-box"><div class="num">100%</div><div class="lbl">Happy Customers</div></div>
+      <div class="stat-box"><div class="num">5+</div><div class="lbl">Experienced Workers</div></div>
+      <div class="stat-box"><div class="num">50+</div><div class="lbl">Finished Projects</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ WHAT WE STAND FOR ══ -->
+<section>
+  <div class="container">
+    <div class="fi">
+      <div class="label">Our Values</div>
+      <h2 class="h2">What We Stand For</h2>
+      <p class="sub">Four principles guide every job we take on.</p>
+    </div>
+    <div class="values-grid fi">
+      <div class="value-card">
+        <h3>Clarity over clutter</h3>
+        <p>Simple, functional organization that makes sense for how you actually use your garage — not just tidy-looking shelves.</p>
+      </div>
+      <div class="value-card">
+        <h3>Respect for your home</h3>
+        <p>Clean work, careful handling, no shortcuts. We treat your property the way we'd want ours treated.</p>
+      </div>
+      <div class="value-card">
+        <h3>Reliable service</h3>
+        <p>Clear pricing, clear communication, dependable results. No surprises on the invoice. No surprises at the door.</p>
+      </div>
+      <div class="value-card">
+        <h3>Real improvement</h3>
+        <p>Spaces that stay cleaner and work better long after we leave. We're not here for a quick tidy — we're here to fix the problem.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ STORY ══ -->
+<section style="background:var(--bg)">
+  <div class="container">
+    <div class="story-grid">
+      <div class="fi">
+        <div class="label">About GarageClean</div>
+        <h2 class="h2">We make life easier, one garage at a time.</h2>
+        <p class="sub" style="max-width:100%">At GarageClean, we understand that the garage is the one space that always gets pushed to the back of the to-do list. It's too big, too overwhelming, and there's always something more urgent. That's why we exist.</p>
+        <p style="font-size:16px;color:var(--muted);line-height:1.72;margin-top:20px">We take care of the cleaning, sorting, hauling, and organizing — so busy homeowners across North Vancouver, West Vancouver, and Burnaby can finally check it off the list and get their space back. No more saying "I'll get to it this weekend."</p>
+        <p style="font-size:16px;color:var(--muted);line-height:1.72;margin-top:16px">We're a locally owned team that takes pride in doing the job right the first time. Flat quotes, fully insured, and zero mess left behind.</p>
+        <div style="margin-top:36px">
+          <a href="contact.html" class="btn btn-primary">Get a Free Quote</a>
+        </div>
+      </div>
+      <div class="fi" style="transition-delay:.15s">
+        <img src="after1.png" alt="Organized garage by GarageClean" style="width:100%;border-radius:16px;box-shadow:var(--sh-lg);">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CTA ══ -->
+<section style="background:var(--navy);text-align:center">
+  <div class="container fi">
+    <div class="label" style="color:var(--blue-lite)">Get Started</div>
+    <h2 class="h2" style="color:#fff;margin:0 auto 16px">Ready to reclaim your garage?</h2>
+    <p class="sub" style="margin:0 auto 36px;color:rgba(255,255,255,.55)">Request a free quote and we'll get back to you within 24 hours.</p>
+    <a href="contact.html" class="btn btn-primary">Request a Free Quote</a>
+  </div>
+</section>
+
+<div id="footer-placeholder"></div>
+<script src="shared.js"></script>
+</body>
+</html>

@@ -3,796 +3,157 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ClearBay — Garage Cleanout North & West Vancouver, Burnaby</title>
+  <title>GarageClean — Garage Cleanout North & West Vancouver, Burnaby</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      color: #0B2A4A;
-      background: #fff;
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    :root {
-      --navy:      #0B2A4A;
-      --blue:      #2E7DD1;
-      --blue-lite: #7BB8F0;
-      --bg:        #F4F8FC;
-      --muted:     #5B7A99;
-      --border:    #D8E8F5;
-      --r:         12px;
-      --sh:        0 4px 24px rgba(11,42,74,.08);
-      --sh-lg:     0 16px 56px rgba(11,42,74,.14);
-    }
-
-    .container { max-width: 1160px; margin: 0 auto; padding: 0 28px; }
-    section { padding: 104px 0; }
-
-    /* ── Typography helpers ── */
-    .label {
-      font-size: 12px; font-weight: 700; letter-spacing: .12em;
-      text-transform: uppercase; color: var(--blue); margin-bottom: 18px;
-    }
-    .h2 {
-      font-size: clamp(36px, 4.5vw, 54px);
-      font-weight: 800; line-height: 1.08; letter-spacing: -.025em;
-      color: var(--navy); margin-bottom: 18px;
-    }
-    .sub { font-size: 18px; color: var(--muted); line-height: 1.7; max-width: 540px; }
-
-    /* ── Buttons ── */
-    .btn {
-      display: inline-flex; align-items: center; gap: 8px;
-      padding: 15px 28px; border-radius: 9px;
-      font-size: 15px; font-weight: 600; font-family: inherit;
-      cursor: pointer; text-decoration: none; border: none;
-      transition: all .18s ease;
-    }
-    .btn-primary {
-      background: var(--blue); color: #fff;
-      box-shadow: 0 4px 18px rgba(46,125,209,.38);
-    }
-    .btn-primary:hover { background: #2570bf; transform: translateY(-1px); box-shadow: 0 6px 26px rgba(46,125,209,.48); }
-    .btn-ghost {
-      background: transparent; color: #fff;
-      border: 1.5px solid rgba(255,255,255,.3);
-    }
-    .btn-ghost:hover { border-color: rgba(255,255,255,.7); background: rgba(255,255,255,.06); }
-    .btn-outline {
-      background: transparent; color: var(--navy);
-      border: 1.5px solid var(--border);
-    }
-    .btn-outline:hover { border-color: var(--blue); color: var(--blue); }
-    .btn-white { background: #fff; color: var(--navy); }
-    .btn-white:hover { background: var(--bg); transform: translateY(-1px); }
-
-    /* ════════════════════════════════
-       NAV
-    ════════════════════════════════ */
-    nav {
-      position: sticky; top: 0; z-index: 200;
-      background: rgba(255,255,255,.94);
-      backdrop-filter: blur(14px);
-      border-bottom: 1px solid var(--border);
-    }
-    .nav-in {
-      display: flex; align-items: center; justify-content: space-between;
-      height: 70px;
-    }
-    .logo {
-      font-size: 21px; font-weight: 900; letter-spacing: -.03em;
-      color: var(--navy); text-decoration: none;
-    }
-    .logo span { color: var(--blue); }
-    .nav-links { display: flex; gap: 36px; list-style: none; }
-    .nav-links a {
-      font-size: 14px; font-weight: 500; color: var(--muted);
-      text-decoration: none; transition: color .15s;
-    }
-    .nav-links a:hover { color: var(--navy); }
-    .nav-cta { padding: 10px 22px; font-size: 14px; }
-    .hamburger {
-      display: none; background: none; border: none; cursor: pointer; padding: 4px; color: var(--navy);
-    }
-
-    /* ════════════════════════════════
-       HERO
-    ════════════════════════════════ */
-    #hero {
-      background: var(--navy); padding: 108px 0 100px;
-      position: relative; overflow: hidden;
-    }
-    #hero::before {
-      content: ''; position: absolute;
-      top: -280px; right: -280px;
-      width: 800px; height: 800px;
-      background: radial-gradient(circle, rgba(46,125,209,.13) 0%, transparent 68%);
-      pointer-events: none;
-    }
-    #hero::after {
-      content: ''; position: absolute;
-      bottom: -200px; left: -160px;
-      width: 500px; height: 500px;
-      background: radial-gradient(circle, rgba(46,125,209,.07) 0%, transparent 68%);
-      pointer-events: none;
-    }
-    .hero-grid {
-      display: grid; grid-template-columns: 1fr 420px; gap: 72px; align-items: center;
-    }
-    .hero-pill {
-      display: inline-flex; align-items: center; gap: 8px;
-      background: rgba(46,125,209,.18); color: var(--blue-lite);
-      font-size: 12px; font-weight: 700; letter-spacing: .1em;
-      text-transform: uppercase; padding: 7px 16px;
-      border-radius: 100px; margin-bottom: 30px;
-    }
+    /* ── Hero ── */
+    #hero { background: var(--navy); padding: 108px 0 100px; position: relative; overflow: hidden; }
+    #hero::before { content: ''; position: absolute; top: -280px; right: -280px; width: 800px; height: 800px; background: radial-gradient(circle, rgba(46,125,209,.13) 0%, transparent 68%); pointer-events: none; }
+    .hero-grid { display: grid; grid-template-columns: 1fr 420px; gap: 72px; align-items: center; }
+    .hero-pill { display: inline-flex; align-items: center; gap: 8px; background: rgba(46,125,209,.18); color: var(--blue-lite); font-size: 12px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; padding: 7px 16px; border-radius: 100px; margin-bottom: 30px; }
     .hero-pill span { background: var(--blue); border-radius: 50%; width: 6px; height: 6px; display: block; }
-    .hero-title {
-      font-size: clamp(46px, 6vw, 72px);
-      font-weight: 900; line-height: 1.02;
-      letter-spacing: -.035em; color: #fff;
-      margin-bottom: 26px;
-    }
+    .hero-title { font-size: clamp(46px, 6vw, 72px); font-weight: 900; line-height: 1.02; letter-spacing: -.035em; color: #fff; margin-bottom: 26px; }
     .hero-title em { font-style: normal; color: var(--blue-lite); }
-    .hero-sub {
-      font-size: 19px; color: rgba(255,255,255,.6);
-      line-height: 1.65; margin-bottom: 42px; max-width: 480px;
-    }
+    .hero-sub { font-size: 19px; color: rgba(255,255,255,.6); line-height: 1.65; margin-bottom: 42px; max-width: 480px; }
     .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
-    /* TODO: Replace this placeholder with a real before/after hero photo:
-       <img src="your-photo.jpg" alt="Before and after garage cleanout" style="width:100%;height:100%;object-fit:cover;border-radius:16px;"> */
-    .hero-img {
-      background: rgba(255,255,255,.04);
-      border: 2px dashed rgba(255,255,255,.14);
-      border-radius: 16px; aspect-ratio: 4/3;
-      display: flex; flex-direction: column;
-      align-items: center; justify-content: center;
-      color: rgba(255,255,255,.28); font-size: 13px;
-      text-align: center; gap: 14px; padding: 32px;
-      font-weight: 500;
-    }
-
-    /* ════════════════════════════════
-       TRUST STRIP
-    ════════════════════════════════ */
-    #trust { padding: 0; background: var(--blue); }
-    .trust-in {
-      display: flex; align-items: center; justify-content: center;
-      gap: 36px; padding: 20px 0; flex-wrap: wrap;
-    }
-    .t-item {
-      display: flex; align-items: center; gap: 9px;
-      color: #fff; font-size: 13px; font-weight: 500;
-    }
-    .t-dot { width: 5px; height: 5px; background: rgba(255,255,255,.35); border-radius: 50%; }
-
-    /* ════════════════════════════════
-       HOW IT WORKS
-    ════════════════════════════════ */
-    #how { background: var(--bg); }
-    .how-head { text-align: center; margin-bottom: 64px; }
-    .how-head .sub { margin: 0 auto; }
-    .steps {
-      display: grid; grid-template-columns: repeat(4,1fr); gap: 24px;
-    }
-    .step {
-      background: #fff; border-radius: var(--r);
-      padding: 36px 28px; box-shadow: var(--sh);
-    }
-    .step-num {
-      font-size: 11px; font-weight: 700; letter-spacing: .1em;
-      text-transform: uppercase; color: var(--blue); margin-bottom: 22px;
-    }
-    .step-icon {
-      width: 52px; height: 52px;
-      background: var(--bg); border-radius: 12px;
-      display: flex; align-items: center; justify-content: center;
-      margin-bottom: 20px;
-    }
-    .step h3 { font-size: 17px; font-weight: 700; color: var(--navy); margin-bottom: 10px; }
-    .step p  { font-size: 14px; color: var(--muted); line-height: 1.62; }
-
-    /* ════════════════════════════════
-       INCLUDED
-    ════════════════════════════════ */
-    #included .two-col {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center;
-    }
-    .checklist { list-style: none; display: flex; flex-direction: column; gap: 18px; margin-top: 32px; }
-    .checklist li {
-      display: flex; align-items: flex-start; gap: 14px;
-      font-size: 16px; font-weight: 500; color: var(--navy);
-    }
-    .chk {
-      width: 24px; height: 24px; background: var(--blue); border-radius: 50%;
-      display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px;
-    }
-    .navy-card {
-      background: var(--navy); border-radius: 18px; padding: 48px;
-    }
-    .navy-card h3 { font-size: 30px; font-weight: 800; color: #fff; margin-bottom: 14px; line-height: 1.15; letter-spacing: -.02em; }
-    .navy-card p  { font-size: 16px; color: rgba(255,255,255,.55); line-height: 1.68; }
-    .stats {
-      margin-top: 40px; padding-top: 40px;
-      border-top: 1px solid rgba(255,255,255,.1);
-      display: grid; grid-template-columns: 1fr 1fr; gap: 24px;
-    }
-    .stat-n { font-size: 38px; font-weight: 900; color: var(--blue-lite); letter-spacing: -.02em; }
-    .stat-l { font-size: 13px; color: rgba(255,255,255,.4); margin-top: 4px; }
-
-    /* ════════════════════════════════
-       PRICING
-    ════════════════════════════════ */
-    #pricing { background: var(--bg); }
-    .pricing-head { text-align: center; margin-bottom: 56px; }
-    .pricing-head .sub { margin: 0 auto; }
-    .cards {
-      display: grid; grid-template-columns: repeat(3,1fr);
-      gap: 24px; max-width: 920px; margin: 0 auto;
-    }
-    .card {
-      background: #fff; border-radius: 18px; padding: 40px 32px;
-      box-shadow: var(--sh); border: 2px solid transparent;
-      position: relative; transition: transform .2s, box-shadow .2s;
-    }
-    .card:hover { transform: translateY(-4px); box-shadow: var(--sh-lg); }
-    .card.pop { border-color: var(--blue); box-shadow: var(--sh-lg); }
-    .pop-badge {
-      position: absolute; top: -14px; left: 50%; transform: translateX(-50%);
-      background: var(--blue); color: #fff;
-      font-size: 11px; font-weight: 700; letter-spacing: .07em; text-transform: uppercase;
-      padding: 5px 18px; border-radius: 100px; white-space: nowrap;
-    }
-    .card-tier { font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--blue); margin-bottom: 6px; }
-    .card-name { font-size: 22px; font-weight: 800; color: var(--navy); margin-bottom: 6px; }
-    .card-desc {
-      font-size: 13px; color: var(--muted); margin-bottom: 24px;
-      padding-bottom: 24px; border-bottom: 1px solid var(--border);
-    }
-    /* TODO: Update the "from $X" prices in each card below */
-    .card-price { font-size: 42px; font-weight: 900; color: var(--navy); letter-spacing: -.025em; margin-bottom: 4px; }
-    .card-note  { font-size: 12px; color: var(--muted); margin-bottom: 28px; }
-    .card-feats { list-style: none; display: flex; flex-direction: column; gap: 11px; margin-bottom: 32px; }
-    .card-feats li {
-      display: flex; align-items: center; gap: 10px;
-      font-size: 14px; color: var(--navy);
-    }
-    .card-feats li::before {
-      content: ''; width: 6px; height: 6px;
-      background: var(--blue); border-radius: 50%; flex-shrink: 0;
-    }
-    .pricing-note { text-align: center; margin-top: 32px; font-size: 14px; color: var(--muted); }
-    .pricing-note strong { color: var(--navy); }
-
-    /* ════════════════════════════════
-       GALLERY
-    ════════════════════════════════ */
-    #gallery { background: #fff; }
-    .gallery-head { text-align: center; margin-bottom: 48px; }
-    .gallery-grid {
-      display: grid; grid-template-columns: repeat(2,1fr); gap: 20px;
-    }
-    .gallery-grid > div { aspect-ratio: 4/3 !important; }
-    /* TODO: Replace each .gitem div with <img src="your-photo.jpg" …> once you have real photos */
-    .gitem {
-      background: var(--bg); border: 2px dashed var(--border);
-      border-radius: var(--r); aspect-ratio: 16/10;
-      display: flex; flex-direction: column;
-      align-items: center; justify-content: center;
-      color: var(--muted); font-size: 13px; font-weight: 500; gap: 10px;
-    }
-    .g-badge {
-      display: inline-block;
-      font-size: 10px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
-      padding: 4px 12px; border-radius: 5px;
-      background: var(--navy); color: #fff; margin-bottom: 6px;
-    }
-    .g-badge.after { background: var(--blue); }
-
-    /* ════════════════════════════════
-       QUOTE FORM
-    ════════════════════════════════ */
-    #quote { background: var(--navy); }
+    /* ── Included ── */
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; }
+    /* ── Quote (home CTA) ── */
+    #home-quote { background: var(--navy); }
     .quote-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 88px; align-items: start; }
     .ql .h2 { color: #fff; }
     .ql .sub { color: rgba(255,255,255,.5); }
     .promises { display: flex; flex-direction: column; gap: 22px; margin-top: 44px; }
     .promise { display: flex; align-items: flex-start; gap: 14px; }
-    .p-icon {
-      width: 40px; height: 40px; flex-shrink: 0;
-      background: rgba(46,125,209,.2); border-radius: 10px;
-      display: flex; align-items: center; justify-content: center;
-    }
+    .p-icon { width: 40px; height: 40px; flex-shrink: 0; background: rgba(46,125,209,.2); border-radius: 10px; display: flex; align-items: center; justify-content: center; }
     .promise h4 { font-size: 15px; font-weight: 600; color: #fff; margin-bottom: 3px; }
     .promise p  { font-size: 13px; color: rgba(255,255,255,.4); line-height: 1.55; }
-
     .qform { background: #fff; border-radius: 18px; padding: 42px; }
-    .frow  { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-    .fgrp  { margin-bottom: 20px; }
-    .fgrp label {
-      display: block; font-size: 13px; font-weight: 600;
-      color: var(--navy); margin-bottom: 8px;
-    }
-    .fgrp input, .fgrp select, .fgrp textarea {
-      width: 100%; padding: 13px 16px;
-      border: 1.5px solid var(--border); border-radius: 9px;
-      font-size: 15px; font-family: inherit; color: var(--navy);
-      background: #fff; outline: none; transition: border-color .15s;
-    }
-    .fgrp input:focus, .fgrp select:focus, .fgrp textarea:focus {
-      border-color: var(--blue); box-shadow: 0 0 0 3px rgba(46,125,209,.1);
-    }
-    .fgrp textarea { resize: vertical; min-height: 100px; }
     .fsub { width: 100%; padding: 17px; font-size: 16px; margin-top: 6px; border-radius: 10px; justify-content: center; }
-
     #success { display: none; text-align: center; padding: 48px 20px; }
-    .s-icon {
-      width: 64px; height: 64px; background: #E8F5E9; border-radius: 50%;
-      display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;
-    }
+    .s-icon { width: 64px; height: 64px; background: #E8F5E9; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; }
     #success h3 { font-size: 24px; font-weight: 800; color: var(--navy); margin-bottom: 10px; }
     #success p  { font-size: 15px; color: var(--muted); }
-
-    /* ════════════════════════════════
-       FOOTER
-    ════════════════════════════════ */
-    footer { background: #081E36; padding: 60px 0 32px; }
-    .foot-grid {
-      display: grid; grid-template-columns: 2fr 1fr 1fr;
-      gap: 48px; padding-bottom: 44px;
-      border-bottom: 1px solid rgba(255,255,255,.07); margin-bottom: 32px;
-    }
-    .foot-logo { font-size: 21px; font-weight: 900; letter-spacing: -.03em; color: #fff; margin-bottom: 12px; }
-    .foot-logo span { color: var(--blue-lite); }
-    .foot-desc { font-size: 14px; color: rgba(255,255,255,.38); line-height: 1.68; max-width: 280px; margin-bottom: 26px; }
-    .foot-contact { display: flex; flex-direction: column; gap: 11px; }
-    .foot-contact a {
-      font-size: 14px; color: rgba(255,255,255,.5); text-decoration: none;
-      display: flex; align-items: center; gap: 10px; transition: color .15s;
-    }
-    .foot-contact a:hover { color: #fff; }
-    .foot-col h4 {
-      font-size: 12px; font-weight: 700; letter-spacing: .09em; text-transform: uppercase;
-      color: #fff; margin-bottom: 20px;
-    }
-    .foot-links { list-style: none; display: flex; flex-direction: column; gap: 13px; }
-    .foot-links a { font-size: 14px; color: rgba(255,255,255,.42); text-decoration: none; transition: color .15s; }
-    .foot-links a:hover { color: #fff; }
-    .foot-bottom { display: flex; align-items: center; justify-content: space-between; }
-    .foot-copy { font-size: 13px; color: rgba(255,255,255,.25); }
-
-    /* ════════════════════════════════
-       POLICIES
-    ════════════════════════════════ */
-    #policies { background: var(--bg); }
-    .policies-head { text-align: center; margin-bottom: 56px; }
-    .policies-head .sub { margin: 0 auto; }
-    .accord { display: flex; flex-direction: column; gap: 12px; max-width: 820px; margin: 0 auto; }
-    .ac-item {
-      background: #fff; border-radius: var(--r);
-      box-shadow: var(--sh); overflow: hidden;
-      border: 1.5px solid transparent; transition: border-color .2s;
-    }
-    .ac-item.open { border-color: var(--border); }
-    .ac-trigger {
-      width: 100%; display: flex; align-items: center; justify-content: space-between;
-      padding: 24px 28px; background: none; border: none;
-      cursor: pointer; font-family: inherit; text-align: left; gap: 16px;
-    }
-    .ac-trigger-left { display: flex; align-items: center; gap: 16px; }
-    .ac-icon-wrap {
-      width: 40px; height: 40px; flex-shrink: 0;
-      background: var(--bg); border-radius: 10px;
-      display: flex; align-items: center; justify-content: center;
-    }
-    .ac-title { font-size: 17px; font-weight: 700; color: var(--navy); }
-    .ac-subtitle { font-size: 13px; color: var(--muted); margin-top: 2px; }
-    .ac-chevron {
-      width: 20px; height: 20px; flex-shrink: 0; color: var(--muted);
-      transition: transform .25s ease;
-    }
-    .ac-item.open .ac-chevron { transform: rotate(180deg); }
-    .ac-body {
-      display: none; padding: 0 28px 28px;
-    }
-    .ac-item.open .ac-body { display: block; }
-    .ac-divider {
-      border: none; border-top: 1px solid var(--border); margin-bottom: 24px;
-    }
-    .pol-group { margin-bottom: 22px; }
-    .pol-group:last-child { margin-bottom: 0; }
-    .pol-group h4 {
-      font-size: 13px; font-weight: 700; letter-spacing: .06em;
-      text-transform: uppercase; color: var(--blue); margin-bottom: 10px;
-    }
-    .pol-list { list-style: none; display: flex; flex-direction: column; gap: 9px; }
-    .pol-list li {
-      font-size: 14px; color: #3A5570; line-height: 1.58;
-      padding-left: 16px; position: relative;
-    }
-    .pol-list li::before {
-      content: ''; position: absolute; left: 0; top: 8px;
-      width: 5px; height: 5px; background: var(--blue); border-radius: 50%;
-    }
-    .pol-note {
-      font-size: 13px; color: var(--muted); line-height: 1.6;
-      background: var(--bg); border-radius: 8px; padding: 14px 16px; margin-top: 16px;
-    }
-
-    /* ════════════════════════════════
-       FADE-IN ANIMATION
-    ════════════════════════════════ */
-    .fi {
-      opacity: 0; transform: translateY(26px);
-      transition: opacity .65s ease, transform .65s ease;
-    }
-    .fi.on { opacity: 1; transform: translateY(0); }
-
-    /* ════════════════════════════════
-       RESPONSIVE
-    ════════════════════════════════ */
+    /* ── Responsive ── */
     @media (max-width: 1000px) {
       .hero-grid { grid-template-columns: 1fr; }
-      .steps     { grid-template-columns: repeat(2,1fr); }
-      #included .two-col { grid-template-columns: 1fr; }
-      .cards     { grid-template-columns: 1fr; max-width: 420px; }
-      .gallery-grid { grid-template-columns: 1fr; }
-      .quote-grid { grid-template-columns: 1fr; gap: 52px; }
-      .foot-grid  { grid-template-columns: 1fr; gap: 36px; }
+      .two-col { grid-template-columns: 1fr; }
+      .quote-grid { grid-template-columns: 1fr; gap: 48px; }
     }
     @media (max-width: 640px) {
-      section { padding: 72px 0; }
-      .steps  { grid-template-columns: 1fr; }
-      .frow   { grid-template-columns: 1fr; }
-      .nav-links, .nav-cta { display: none; }
-      .hamburger { display: block; }
       .hero-actions { flex-direction: column; }
       .hero-actions .btn { width: 100%; justify-content: center; }
-      .foot-bottom { flex-direction: column; gap: 10px; text-align: center; }
     }
   </style>
 </head>
 <body>
 
-<!-- ══════════ NAV ══════════ -->
-<nav>
-  <div class="container">
-    <div class="nav-in">
-      <a href="#hero" class="logo">Clear<span>Bay</span></a>
-      <ul class="nav-links">
-        <li><a href="#how">How It Works</a></li>
-        <li><a href="#pricing">Pricing</a></li>
-        <li><a href="#policies">Policies</a></li>
-        <li><a href="#quote">Quote</a></li>
-      </ul>
-      <a href="#quote" class="btn btn-primary nav-cta">Get a Quote</a>
-      <button class="hamburger" aria-label="Open menu">
-        <svg width="22" height="16" viewBox="0 0 22 16" fill="none">
-          <rect width="22" height="2" rx="1" fill="#0B2A4A"/>
-          <rect y="7" width="22" height="2" rx="1" fill="#0B2A4A"/>
-          <rect y="14" width="22" height="2" rx="1" fill="#0B2A4A"/>
-        </svg>
-      </button>
-    </div>
-  </div>
-</nav>
+<div id="nav-placeholder"></div>
 
-<!-- ══════════ HERO ══════════ -->
+<!-- ══ HERO ══ -->
 <section id="hero">
   <div class="container">
     <div class="hero-grid">
       <div>
-        <div class="hero-pill">
-          <span></span>
-          North Van · West Van · Burnaby
-        </div>
-        <h1 class="hero-title">
-          Everyone says<br>
-          they'll clean<br>
-          the garage.<br>
-          <em>Nobody does.</em>
-        </h1>
-        <p class="hero-sub">
-          We empty it, deep-clean every surface, haul away what you don't want,
-          and organize everything back — flat price, no surprises.
-        </p>
+        <div class="hero-pill"><span></span>North Van · West Van · Burnaby</div>
+        <h1 class="hero-title">Everyone says<br>they'll clean<br>the garage.<br><em>Nobody does.</em></h1>
+        <p class="hero-sub">We empty it, deep-clean every surface, haul away what you don't want, and organize everything back — flat price, no surprises.</p>
         <div class="hero-actions">
-          <a href="#quote" class="btn btn-primary">
-            Get My Free Quote
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-              <path d="M3 8h10M9 4l4 4-4 4" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </a>
-          <a href="#how" class="btn btn-ghost">See How It Works</a>
+          <a href="contact.html" class="btn btn-primary">Get My Free Quote <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a href="services.html" class="btn btn-ghost">See How It Works</a>
         </div>
       </div>
-
-      <img src="hero.png" alt="Garage before and after ClearBay cleanout"
-           style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:16px;box-shadow:0 24px 64px rgba(0,0,0,.35);">
+      <img src="hero.png" alt="Garage before and after GarageClean cleanout" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:16px;box-shadow:0 24px 64px rgba(0,0,0,.35);">
     </div>
   </div>
 </section>
 
-<!-- ══════════ TRUST STRIP ══════════ -->
+<!-- ══ TRUST ══ -->
 <div id="trust">
   <div class="container">
     <div class="trust-in">
-      <div class="t-item">
-        <svg width="15" height="15" viewBox="0 0 15 15" fill="none">
-          <path d="M7.5 1l1.91 3.87 4.27.62-3.09 3.01.73 4.25L7.5 10.87l-3.82 2.01.73-4.25L1.32 5.5l4.27-.62z" fill="white" opacity=".7"/>
-        </svg>
-        Fully insured
-      </div>
+      <div class="t-item"><svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M7.5 1l1.91 3.87 4.27.62-3.09 3.01.73 4.25L7.5 10.87l-3.82 2.01.73-4.25L1.32 5.5l4.27-.62z" fill="white" opacity=".7"/></svg>Fully insured</div>
       <div class="t-dot"></div>
-      <div class="t-item">
-        <svg width="15" height="15" viewBox="0 0 15 15" fill="none">
-          <path d="M7.5 1.5C5.57 1.5 4 3.07 4 5c0 3.25 3.5 7.5 3.5 7.5s3.5-4.25 3.5-7.5c0-1.93-1.57-3.5-3.5-3.5z" stroke="white" stroke-width="1.4" stroke-opacity=".7"/>
-          <circle cx="7.5" cy="5" r="1.5" fill="white" opacity=".7"/>
-        </svg>
-        Locally owned
-      </div>
+      <div class="t-item"><svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M7.5 1.5C5.57 1.5 4 3.07 4 5c0 3.25 3.5 7.5 3.5 7.5s3.5-4.25 3.5-7.5c0-1.93-1.57-3.5-3.5-3.5z" stroke="white" stroke-width="1.4" stroke-opacity=".7"/><circle cx="7.5" cy="5" r="1.5" fill="white" opacity=".7"/></svg>Locally owned</div>
       <div class="t-dot"></div>
       <div class="t-item">Serving North Van, West Van &amp; Burnaby</div>
     </div>
   </div>
 </div>
 
-<!-- ══════════ HOW IT WORKS ══════════ -->
-<section id="how">
+<!-- ══ HOW IT WORKS ══ -->
+<section id="how" style="background:var(--bg)">
   <div class="container">
-    <div class="how-head fi">
+    <div style="text-align:center;margin-bottom:64px" class="fi">
       <div class="label">The Process</div>
       <h2 class="h2">Four steps. Completely done.</h2>
-      <p class="sub">We handle everything start to finish. You don't lift a finger.</p>
+      <p class="sub" style="margin:0 auto">We handle everything start to finish. You don't lift a finger.</p>
     </div>
     <div class="steps">
-
       <div class="step fi">
         <div class="step-num">Step 01</div>
-        <div class="step-icon">
-          <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
-            <rect x="3" y="9" width="20" height="14" rx="2" stroke="#2E7DD1" stroke-width="1.8"/>
-            <path d="M1 9h24" stroke="#2E7DD1" stroke-width="1.8" stroke-linecap="round"/>
-            <path d="M10 9V6a3 3 0 016 0v3" stroke="#2E7DD1" stroke-width="1.8" stroke-linecap="round"/>
-            <path d="M9 14h8" stroke="#2E7DD1" stroke-width="1.8" stroke-linecap="round"/>
-          </svg>
-        </div>
+        <div class="step-icon"><svg width="26" height="26" viewBox="0 0 26 26" fill="none"><rect x="3" y="9" width="20" height="14" rx="2" stroke="#2E7DD1" stroke-width="1.8"/><path d="M1 9h24" stroke="#2E7DD1" stroke-width="1.8" stroke-linecap="round"/><path d="M10 9V6a3 3 0 016 0v3" stroke="#2E7DD1" stroke-width="1.8" stroke-linecap="round"/><path d="M9 14h8" stroke="#2E7DD1" stroke-width="1.8" stroke-linecap="round"/></svg></div>
         <h3>We empty it</h3>
         <p>Everything comes out — every shelf, every corner. Staged safely in your driveway so you can see exactly what you have.</p>
       </div>
-
       <div class="step fi" style="transition-delay:.1s">
         <div class="step-num">Step 02</div>
-        <div class="step-icon">
-          <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
-            <path d="M13 2v3M13 21v3M2 13h3M21 13h3" stroke="#2E7DD1" stroke-width="1.8" stroke-linecap="round"/>
-            <circle cx="13" cy="13" r="5" stroke="#2E7DD1" stroke-width="1.8"/>
-            <path d="M5.8 5.8l2.2 2.2M18 18l2.2 2.2M20.2 5.8L18 8M8 18l-2.2 2.2" stroke="#2E7DD1" stroke-width="1.8" stroke-linecap="round"/>
-          </svg>
-        </div>
-        <h3>Deep clean top to bottom</h3>
+        <div class="step-icon"><svg width="26" height="26" viewBox="0 0 26 26" fill="none"><path d="M13 2v3M13 21v3M2 13h3M21 13h3" stroke="#2E7DD1" stroke-width="1.8" stroke-linecap="round"/><circle cx="13" cy="13" r="5" stroke="#2E7DD1" stroke-width="1.8"/><path d="M5.8 5.8l2.2 2.2M18 18l2.2 2.2M20.2 5.8L18 8M8 18l-2.2 2.2" stroke="#2E7DD1" stroke-width="1.8" stroke-linecap="round"/></svg></div>
+        <h3>Deep clean</h3>
         <p>Every surface scrubbed. Walls, ceiling, shelving, floors — dust, cobwebs, grease, and grime. All of it gone.</p>
       </div>
-
       <div class="step fi" style="transition-delay:.2s">
         <div class="step-num">Step 03</div>
-        <div class="step-icon">
-          <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
-            <path d="M2 8h14v13H2z" stroke="#2E7DD1" stroke-width="1.8" stroke-linejoin="round"/>
-            <path d="M16 11h4l4 6v4h-8V11z" stroke="#2E7DD1" stroke-width="1.8" stroke-linejoin="round"/>
-            <circle cx="6" cy="22.5" r="1.5" stroke="#2E7DD1" stroke-width="1.8"/>
-            <circle cx="20" cy="22.5" r="1.5" stroke="#2E7DD1" stroke-width="1.8"/>
-          </svg>
-        </div>
-        <h3>Haul away what you don't want</h3>
-        <p>You decide what stays. Everything else disappears — responsibly disposed of or donated. No dump runs for you.</p>
+        <div class="step-icon"><svg width="26" height="26" viewBox="0 0 26 26" fill="none"><path d="M2 8h14v13H2z" stroke="#2E7DD1" stroke-width="1.8" stroke-linejoin="round"/><path d="M16 11h4l4 6v4h-8V11z" stroke="#2E7DD1" stroke-width="1.8" stroke-linejoin="round"/><circle cx="6" cy="22.5" r="1.5" stroke="#2E7DD1" stroke-width="1.8"/><circle cx="20" cy="22.5" r="1.5" stroke="#2E7DD1" stroke-width="1.8"/></svg></div>
+        <h3>Haul it away</h3>
+        <p>You decide what stays. Everything else disappears — responsibly disposed of or donated.</p>
       </div>
-
       <div class="step fi" style="transition-delay:.3s">
         <div class="step-num">Step 04</div>
-        <div class="step-icon">
-          <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
-            <rect x="2" y="2" width="10" height="10" rx="2.5" stroke="#2E7DD1" stroke-width="1.8"/>
-            <rect x="14" y="2" width="10" height="10" rx="2.5" stroke="#2E7DD1" stroke-width="1.8"/>
-            <rect x="2" y="14" width="10" height="10" rx="2.5" stroke="#2E7DD1" stroke-width="1.8"/>
-            <rect x="14" y="14" width="10" height="10" rx="2.5" stroke="#2E7DD1" stroke-width="1.8"/>
-          </svg>
-        </div>
+        <div class="step-icon"><svg width="26" height="26" viewBox="0 0 26 26" fill="none"><rect x="2" y="2" width="10" height="10" rx="2.5" stroke="#2E7DD1" stroke-width="1.8"/><rect x="14" y="2" width="10" height="10" rx="2.5" stroke="#2E7DD1" stroke-width="1.8"/><rect x="2" y="14" width="10" height="10" rx="2.5" stroke="#2E7DD1" stroke-width="1.8"/><rect x="14" y="14" width="10" height="10" rx="2.5" stroke="#2E7DD1" stroke-width="1.8"/></svg></div>
         <h3>Organize everything back</h3>
         <p>Your belongings go back in — sorted, grouped, and easy to find. A garage that actually works.</p>
       </div>
-
+    </div>
+    <div style="text-align:center;margin-top:52px" class="fi">
+      <a href="services.html" class="btn btn-outline">Learn More About Our Process</a>
     </div>
   </div>
 </section>
 
-<!-- ══════════ WHAT'S INCLUDED ══════════ -->
-<section id="included">
-  <div class="container">
-    <div class="two-col">
-      <div class="fi">
-        <div class="label">What's Included</div>
-        <h2 class="h2">Everything.<br>We mean that.</h2>
-        <p class="sub">No add-ons. No surprises. Your flat quote covers all of this.</p>
-        <ul class="checklist">
-          <li>
-            <span class="chk">
-              <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-                <path d="M2 6l3 3 5-5" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </span>
-            Complete garage empty-out
-          </li>
-          <li>
-            <span class="chk">
-              <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-                <path d="M2 6l3 3 5-5" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </span>
-            Dust &amp; cobweb removal — walls, ceiling, joists
-          </li>
-          <li>
-            <span class="chk">
-              <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-                <path d="M2 6l3 3 5-5" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </span>
-            Full floor scrub and sweep
-          </li>
-          <li>
-            <span class="chk">
-              <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-                <path d="M2 6l3 3 5-5" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </span>
-            Shelf and storage unit wipe-down
-          </li>
-          <li>
-            <span class="chk">
-              <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-                <path d="M2 6l3 3 5-5" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </span>
-            Junk haul-away — disposal included
-          </li>
-          <li>
-            <span class="chk">
-              <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-                <path d="M2 6l3 3 5-5" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </span>
-            Full re-organization of everything you keep
-          </li>
-        </ul>
-      </div>
-      <div class="navy-card fi" style="transition-delay:.15s">
-        <h3>Flat quote.<br>No hourly surprises.</h3>
-        <p>We assess your garage size and level of buildup, then give you one clear number before we start. That's what you pay — nothing more.</p>
-        <div class="stats">
-          <div>
-            <div class="stat-n">1 day</div>
-            <div class="stat-l">Start to finish</div>
-          </div>
-          <div>
-            <div class="stat-n">100%</div>
-            <div class="stat-l">Satisfaction guaranteed</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ══════════ PRICING ══════════ -->
-<section id="pricing">
-  <div class="container">
-    <div class="pricing-head fi">
-      <div class="label">Pricing</div>
-      <h2 class="h2">Clear prices. No hourly billing.</h2>
-      <p class="sub">Every job gets a flat upfront quote based on your garage and buildup. These are starting points — your quote is locked in before we touch anything.</p>
-    </div>
-    <div class="cards">
-
-      <div class="card fi">
-        <div class="card-tier">Standard</div>
-        <div class="card-name">Single Garage</div>
-        <div class="card-desc">1-car garage · low to moderate buildup</div>
-        <!-- TODO: Update this starting price -->
-        <div class="card-price">from $800</div>
-        <div class="card-note">Flat quote · no hourly billing</div>
-        <ul class="card-feats">
-          <li>Full empty-out &amp; clean</li>
-          <li>Dust &amp; cobweb removal</li>
-          <li>Floor scrub</li>
-          <li>Junk haul-away</li>
-          <li>Re-organization</li>
-        </ul>
-        <a href="#quote" class="btn btn-outline" style="width:100%;justify-content:center;">Get a Quote</a>
-      </div>
-
-      <div class="card pop fi" style="transition-delay:.1s">
-        <div class="pop-badge">Most Popular</div>
-        <div class="card-tier">Large</div>
-        <div class="card-name">Double Garage</div>
-        <div class="card-desc">2-car garage · moderate to heavy buildup</div>
-        <!-- TODO: Update this starting price -->
-        <div class="card-price">from $1,600</div>
-        <div class="card-note">Flat quote · no hourly billing</div>
-        <ul class="card-feats">
-          <li>Full empty-out &amp; clean</li>
-          <li>Dust &amp; cobweb removal</li>
-          <li>Floor scrub &amp; treatment</li>
-          <li>Junk haul-away</li>
-          <li>Full re-organization</li>
-          <li>Extra crew for heavy buildup</li>
-        </ul>
-        <a href="#quote" class="btn btn-primary" style="width:100%;justify-content:center;">Get a Quote</a>
-      </div>
-
-      <div class="card fi" style="transition-delay:.2s">
-        <div class="card-tier">Estate</div>
-        <div class="card-name">3+ Car / Estate</div>
-        <div class="card-desc">Large or estate garages · heavy buildup</div>
-        <!-- TODO: Update this starting price -->
-        <div class="card-price">from $2,800</div>
-        <div class="card-note">Flat quote · no hourly billing</div>
-        <ul class="card-feats">
-          <li>Full empty-out &amp; clean</li>
-          <li>Dust &amp; cobweb removal</li>
-          <li>Full floor detail</li>
-          <li>Large-load haul-away</li>
-          <li>Full re-organization</li>
-          <li>Dedicated crew</li>
-        </ul>
-        <a href="#quote" class="btn btn-outline" style="width:100%;justify-content:center;">Get a Quote</a>
-      </div>
-
-    </div>
-    <p class="pricing-note fi">
-      <strong>Every job is quoted individually.</strong> What we quote is what you pay.
-    </p>
-  </div>
-</section>
-
-<!-- ══════════ BEFORE / AFTER ══════════ -->
+<!-- ══ GALLERY ══ -->
 <section id="gallery">
   <div class="container">
-    <div class="gallery-head fi">
+    <div style="text-align:center;margin-bottom:48px" class="fi">
       <div class="label">Results</div>
       <h2 class="h2">See the difference.</h2>
     </div>
     <div class="gallery-grid fi">
       <div style="border-radius:var(--r);overflow:hidden;position:relative;">
-        <span class="g-badge" style="position:absolute;top:16px;left:16px;z-index:1;">Before</span>
-        <img src="before1.png" alt="Heavily cluttered garage before ClearBay cleanout"
-             style="width:100%;height:100%;object-fit:cover;display:block;">
+        <span class="g-badge" style="position:absolute;top:16px;left:16px;z-index:1;display:inline-block;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:4px 12px;border-radius:5px;background:var(--navy);color:#fff;">Before</span>
+        <img src="before1.png" alt="Before" style="width:100%;height:100%;object-fit:cover;display:block;">
       </div>
       <div style="border-radius:var(--r);overflow:hidden;position:relative;">
-        <span class="g-badge after" style="position:absolute;top:16px;left:16px;z-index:1;">After</span>
-        <img src="after1.png" alt="Spotless organized garage after ClearBay cleanout"
-             style="width:100%;height:100%;object-fit:cover;display:block;">
+        <span class="g-badge" style="position:absolute;top:16px;left:16px;z-index:1;display:inline-block;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:4px 12px;border-radius:5px;background:var(--blue);color:#fff;">After</span>
+        <img src="after1.png" alt="After" style="width:100%;height:100%;object-fit:cover;display:block;">
       </div>
       <div style="border-radius:var(--r);overflow:hidden;position:relative;">
-        <span class="g-badge" style="position:absolute;top:16px;left:16px;z-index:1;">Before</span>
-        <img src="before2.png" alt="Cluttered garage before ClearBay cleanout"
-             style="width:100%;height:100%;object-fit:cover;display:block;">
+        <span class="g-badge" style="position:absolute;top:16px;left:16px;z-index:1;display:inline-block;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:4px 12px;border-radius:5px;background:var(--navy);color:#fff;">Before</span>
+        <img src="before2.png" alt="Before" style="width:100%;height:100%;object-fit:cover;display:block;">
       </div>
       <div style="border-radius:var(--r);overflow:hidden;position:relative;">
-        <span class="g-badge after" style="position:absolute;top:16px;left:16px;z-index:1;">After</span>
-        <img src="after2.png" alt="Clean modern garage after ClearBay cleanout"
-             style="width:100%;height:100%;object-fit:cover;display:block;">
+        <span class="g-badge" style="position:absolute;top:16px;left:16px;z-index:1;display:inline-block;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:4px 12px;border-radius:5px;background:var(--blue);color:#fff;">After</span>
+        <img src="after2.png" alt="After" style="width:100%;height:100%;object-fit:cover;display:block;">
       </div>
     </div>
   </div>
 </section>
 
-<!-- ══════════ QUOTE FORM ══════════ -->
-<section id="quote">
+<!-- ══ CTA ══ -->
+<section id="home-quote">
   <div class="container">
     <div class="quote-grid">
       <div class="ql fi">
@@ -800,435 +161,46 @@
         <h2 class="h2">Ready to finally get it done?</h2>
         <p class="sub">Tell us about your garage. We'll get back to you within 24 hours with a flat, transparent quote — no obligation.</p>
         <div class="promises">
-          <div class="promise">
-            <div class="p-icon">
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                <path d="M10 1.5l2.4 4.8 5.3.78-3.85 3.75.91 5.3L10 13.4l-4.76 2.73.91-5.3L2.3 7.08l5.3-.78z" stroke="#7BB8F0" stroke-width="1.4" stroke-linejoin="round"/>
-              </svg>
-            </div>
-            <div>
-              <h4>Flat price, locked in before we start</h4>
-              <p>No hourly billing. No add-ons. What we quote is what you pay.</p>
-            </div>
-          </div>
-          <div class="promise">
-            <div class="p-icon">
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                <circle cx="10" cy="10" r="8" stroke="#7BB8F0" stroke-width="1.4"/>
-                <path d="M10 6v4l3 2" stroke="#7BB8F0" stroke-width="1.4" stroke-linecap="round"/>
-              </svg>
-            </div>
-            <div>
-              <h4>Response within 24 hours</h4>
-              <p>Usually much faster. We'll text you directly.</p>
-            </div>
-          </div>
-          <div class="promise">
-            <div class="p-icon">
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                <path d="M10 2C7.24 2 5 4.24 5 7c0 4.25 5 11 5 11s5-6.75 5-11c0-2.76-2.24-5-5-5z" stroke="#7BB8F0" stroke-width="1.4"/>
-                <circle cx="10" cy="7" r="2" fill="#7BB8F0"/>
-              </svg>
-            </div>
-            <div>
-              <h4>North &amp; West Van, Burnaby</h4>
-              <p>We're locals. We know these neighbourhoods.</p>
-            </div>
-          </div>
+          <div class="promise"><div class="p-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 1.5l2.4 4.8 5.3.78-3.85 3.75.91 5.3L10 13.4l-4.76 2.73.91-5.3L2.3 7.08l5.3-.78z" stroke="#7BB8F0" stroke-width="1.4" stroke-linejoin="round"/></svg></div><div><h4>Flat price, locked in before we start</h4><p>No hourly billing. No add-ons.</p></div></div>
+          <div class="promise"><div class="p-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8" stroke="#7BB8F0" stroke-width="1.4"/><path d="M10 6v4l3 2" stroke="#7BB8F0" stroke-width="1.4" stroke-linecap="round"/></svg></div><div><h4>Response within 24 hours</h4><p>Usually much faster. We'll text you directly.</p></div></div>
+          <div class="promise"><div class="p-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 2C7.24 2 5 4.24 5 7c0 4.25 5 11 5 11s5-6.75 5-11c0-2.76-2.24-5-5-5z" stroke="#7BB8F0" stroke-width="1.4"/><circle cx="10" cy="7" r="2" fill="#7BB8F0"/></svg></div><div><h4>North &amp; West Van, Burnaby</h4><p>We're locals. We know these neighbourhoods.</p></div></div>
         </div>
       </div>
-
       <div class="fi" style="transition-delay:.15s">
         <div class="qform">
           <div id="form-body">
             <div class="frow">
-              <div class="fgrp">
-                <label for="fn">First name</label>
-                <input type="text" id="fn" placeholder="John" autocomplete="given-name">
-              </div>
-              <div class="fgrp">
-                <label for="ln">Last name</label>
-                <input type="text" id="ln" placeholder="Smith" autocomplete="family-name">
-              </div>
+              <div class="fgrp"><label for="fn">First name</label><input type="text" id="fn" placeholder="John" autocomplete="given-name"></div>
+              <div class="fgrp"><label for="ln">Last name</label><input type="text" id="ln" placeholder="Smith" autocomplete="family-name"></div>
             </div>
             <div class="frow">
-              <div class="fgrp">
-                <label for="ph">Phone number *</label>
-                <input type="tel" id="ph" placeholder="(604) 555-0100" autocomplete="tel">
-              </div>
-              <div class="fgrp">
-                <label for="em">Email</label>
-                <input type="email" id="em" placeholder="john@email.com" autocomplete="email">
-              </div>
+              <div class="fgrp"><label for="ph">Phone *</label><input type="tel" id="ph" placeholder="(604) 555-0100"></div>
+              <div class="fgrp"><label for="em">Email</label><input type="email" id="em" placeholder="john@email.com"></div>
             </div>
-            <div class="fgrp">
-              <label for="area">Your area *</label>
-              <select id="area">
-                <option value="" disabled selected>Select your area</option>
-                <option>North Vancouver</option>
-                <option>West Vancouver</option>
-                <option>Burnaby</option>
-                <option>Other / Not sure</option>
-              </select>
-            </div>
-            <div class="fgrp">
-              <label for="sz">Garage size *</label>
-              <select id="sz">
-                <option value="" disabled selected>Select garage size</option>
-                <option>1-car garage</option>
-                <option>2-car garage</option>
-                <option>3+ car / estate garage</option>
-                <option>Not sure</option>
-              </select>
-            </div>
-            <div class="fgrp">
-              <label for="msg">Anything else? <span style="font-weight:400;color:var(--muted)">(optional)</span></label>
-              <textarea id="msg" placeholder="How long since it was last cleaned, any specific concerns, best time to call..."></textarea>
-            </div>
-            <button type="button" class="btn btn-primary fsub" onclick="submitQuote()">
-              Request My Free Quote
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                <path d="M3 8h10M9 4l4 4-4 4" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </button>
+            <div class="fgrp"><label for="area">Your area *</label><select id="area"><option value="" disabled selected>Select your area</option><option>North Vancouver</option><option>West Vancouver</option><option>Burnaby</option><option>Other</option></select></div>
+            <div class="fgrp"><label for="sz">Garage size *</label><select id="sz"><option value="" disabled selected>Select size</option><option>1-car garage</option><option>2-car garage</option><option>3+ car / estate</option><option>Not sure</option></select></div>
+            <div class="fgrp"><label for="msg">Anything else? <span style="font-weight:400;color:var(--muted)">(optional)</span></label><textarea id="msg" placeholder="How long since it was last cleaned, any concerns..."></textarea></div>
+            <button type="button" class="btn btn-primary fsub" onclick="submitQuote()">Request My Free Quote <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
           </div>
-
-          <div id="success">
-            <div class="s-icon">
-              <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-                <path d="M6 16l7 7 13-13" stroke="#2E7D32" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </div>
-            <h3>You're all set.</h3>
-            <p>We'll text you within 24 hours with your free quote. Talk soon.</p>
-          </div>
+          <div id="success"><div class="s-icon"><svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M6 16l7 7 13-13" stroke="#2E7D32" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h3>You're all set.</h3><p>We'll text you within 24 hours with your free quote.</p></div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ══════════ POLICIES ══════════ -->
-<section id="policies">
-  <div class="container">
-    <div class="policies-head fi">
-      <div class="label">Policies</div>
-      <h2 class="h2">Clear terms. No surprises.</h2>
-      <p class="sub">We believe in full transparency. Here's exactly how we operate so you always know what to expect.</p>
-    </div>
-    <div class="accord fi">
+<div id="footer-placeholder"></div>
 
-      <!-- Booking & Cancellation -->
-      <div class="ac-item" id="pol-booking">
-        <button class="ac-trigger" onclick="toggleAc('pol-booking')" aria-expanded="false">
-          <div class="ac-trigger-left">
-            <div class="ac-icon-wrap">
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                <rect x="2" y="3" width="16" height="15" rx="2" stroke="#2E7DD1" stroke-width="1.5"/>
-                <path d="M6 1v4M14 1v4M2 8h16" stroke="#2E7DD1" stroke-width="1.5" stroke-linecap="round"/>
-                <path d="M6 12h4M6 15h2" stroke="#2E7DD1" stroke-width="1.5" stroke-linecap="round"/>
-              </svg>
-            </div>
-            <div>
-              <div class="ac-title">Booking &amp; Cancellation</div>
-              <div class="ac-subtitle">How to book, cancel, or reschedule</div>
-            </div>
-          </div>
-          <svg class="ac-chevron" viewBox="0 0 20 20" fill="none">
-            <path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </button>
-        <div class="ac-body">
-          <hr class="ac-divider">
-          <div class="pol-group">
-            <h4>Booking</h4>
-            <ul class="pol-list">
-              <li>Book via our website form, phone, or email — subject to availability and confirmation.</li>
-              <li>Please provide accurate details about your garage size, condition, and any special requirements. Inaccurate information may result in price adjustments or rescheduling.</li>
-              <li>You'll receive a confirmation by email or text once your appointment is reserved. A deposit may be required for large or estate jobs.</li>
-            </ul>
-          </div>
-          <div class="pol-group">
-            <h4>Cancellations &amp; Rescheduling</h4>
-            <ul class="pol-list">
-              <li>Cancellations and reschedule requests must be made at least <strong>24 hours before</strong> your scheduled appointment.</li>
-              <li>Cancellations with less than 24 hours' notice may incur a cancellation fee.</li>
-              <li>Same-day cancellations or no-shows may be charged up to $150 of the service cost. Repeat no-shows may result in refusal of future bookings.</li>
-              <li>If you can't provide access to your property (wrong instructions, locked gate, no answer), the visit may be treated as a cancellation and a lockout fee will apply.</li>
-            </ul>
-          </div>
-          <div class="pol-group">
-            <h4>Deposits</h4>
-            <ul class="pol-list">
-              <li>Deposits are applied toward your final service cost.</li>
-              <li>Deposits are non-refundable if you cancel outside the allowed cancellation window.</li>
-              <li>Prepaid services cancelled within policy may be credited toward a future booking.</li>
-            </ul>
-          </div>
-          <div class="pol-group">
-            <h4>If We Need to Cancel</h4>
-            <ul class="pol-list">
-              <li>We'll notify you as soon as possible if we need to cancel due to weather, emergencies, or unforeseen circumstances.</li>
-              <li>You may reschedule or receive a full refund or credit — your choice.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <!-- Scope of Work -->
-      <div class="ac-item" id="pol-scope">
-        <button class="ac-trigger" onclick="toggleAc('pol-scope')" aria-expanded="false">
-          <div class="ac-trigger-left">
-            <div class="ac-icon-wrap">
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                <path d="M4 5h12M4 9h8M4 13h10M4 17h6" stroke="#2E7DD1" stroke-width="1.5" stroke-linecap="round"/>
-              </svg>
-            </div>
-            <div>
-              <div class="ac-title">Scope of Work</div>
-              <div class="ac-subtitle">What's included and what's not</div>
-            </div>
-          </div>
-          <svg class="ac-chevron" viewBox="0 0 20 20" fill="none">
-            <path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </button>
-        <div class="ac-body">
-          <hr class="ac-divider">
-          <div class="pol-group">
-            <h4>What's Included in Every Job</h4>
-            <ul class="pol-list">
-              <li>Complete empty-out — everything staged in your driveway</li>
-              <li>Dust and cobweb removal from walls, ceiling, joists, and all accessible surfaces</li>
-              <li>Full floor scrub and sweep</li>
-              <li>Shelf and storage unit wipe-down</li>
-              <li>Junk haul-away — we dispose of or donate everything you don't want</li>
-              <li>Full re-organization of everything you're keeping</li>
-            </ul>
-          </div>
-          <div class="pol-group">
-            <h4>Not Included in Standard Service</h4>
-            <ul class="pol-list">
-              <li>Mold remediation or biohazard cleanup</li>
-              <li>Hazardous materials removal (paint, chemicals, fuel)</li>
-              <li>Post-construction debris removal</li>
-              <li>Exterior garage cleaning or high-reach areas not safely accessible</li>
-              <li>Deep stain removal or floor restoration beyond standard cleaning</li>
-            </ul>
-            <div class="pol-note">Need something not listed? Just ask when you request your quote — we'll let you know if we can accommodate it and what it would cost.</div>
-          </div>
-          <div class="pol-group">
-            <h4>Quality &amp; Concerns</h4>
-            <ul class="pol-list">
-              <li>Results depend on the current condition of your garage. We can't guarantee removal of permanent stains or damage beyond normal cleaning standards.</li>
-              <li>If you have concerns about the completed work, notify us within <strong>24 hours</strong> of service completion. We'll review and re-clean any affected areas that fall within the original scope.</li>
-              <li>Any changes to scope during the job require approval and may incur additional charges or rescheduling depending on crew availability.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <!-- Damage Policy -->
-      <div class="ac-item" id="pol-damage">
-        <button class="ac-trigger" onclick="toggleAc('pol-damage')" aria-expanded="false">
-          <div class="ac-trigger-left">
-            <div class="ac-icon-wrap">
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                <path d="M10 2L3 7v11h14V7L10 2z" stroke="#2E7DD1" stroke-width="1.5" stroke-linejoin="round"/>
-                <path d="M10 10v4M10 8v.5" stroke="#2E7DD1" stroke-width="1.5" stroke-linecap="round"/>
-              </svg>
-            </div>
-            <div>
-              <div class="ac-title">Damage Policy</div>
-              <div class="ac-subtitle">Coverage, reporting, and resolution</div>
-            </div>
-          </div>
-          <svg class="ac-chevron" viewBox="0 0 20 20" fill="none">
-            <path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </button>
-        <div class="ac-body">
-          <hr class="ac-divider">
-          <div class="pol-group">
-            <h4>Our Commitment</h4>
-            <ul class="pol-list">
-              <li>ClearBay is fully insured. We treat your property with care and take full responsibility for any accidental damage caused directly by our crew during a scheduled service.</li>
-              <li>Covered damage includes: breakage caused by our team, scratches or cracks from our tools or equipment, and damage from improper product use.</li>
-            </ul>
-          </div>
-          <div class="pol-group">
-            <h4>What's Not Covered</h4>
-            <ul class="pol-list">
-              <li>Pre-existing wear, damage, or deterioration present before our arrival</li>
-              <li>Fragile or improperly secured items that were not disclosed to us in advance</li>
-              <li>Electronics, unless we were specifically asked to handle them</li>
-              <li>Water or plumbing-related damage unrelated to our cleaning</li>
-              <li>Items of extraordinary value not disclosed prior to the job</li>
-            </ul>
-          </div>
-          <div class="pol-group">
-            <h4>Reporting Damage</h4>
-            <ul class="pol-list">
-              <li>Any damage must be reported within <strong>24 hours</strong> of service completion, with clear photos and a written description.</li>
-              <li>Failure to report within this window may void coverage.</li>
-              <li>We'll investigate and resolve claims by repairing, replacing, or issuing a service credit — capped at the current market value of the item. Our total liability is capped at the cost of the service provided.</li>
-            </ul>
-          </div>
-          <div class="pol-note">To protect both parties, please secure or remove valuables and fragile items before we arrive, and let us know about any surfaces requiring special care.</div>
-        </div>
-      </div>
-
-      <!-- Payment Policy -->
-      <div class="ac-item" id="pol-payment">
-        <button class="ac-trigger" onclick="toggleAc('pol-payment')" aria-expanded="false">
-          <div class="ac-trigger-left">
-            <div class="ac-icon-wrap">
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                <rect x="1" y="5" width="18" height="12" rx="2" stroke="#2E7DD1" stroke-width="1.5"/>
-                <path d="M1 9h18" stroke="#2E7DD1" stroke-width="1.5"/>
-                <rect x="4" y="12" width="4" height="2" rx="1" fill="#2E7DD1"/>
-              </svg>
-            </div>
-            <div>
-              <div class="ac-title">Payment Policy</div>
-              <div class="ac-subtitle">Methods, timing, and refunds</div>
-            </div>
-          </div>
-          <svg class="ac-chevron" viewBox="0 0 20 20" fill="none">
-            <path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </button>
-        <div class="ac-body">
-          <hr class="ac-divider">
-          <div class="pol-group">
-            <h4>Accepted Payment Methods</h4>
-            <ul class="pol-list">
-              <li>Credit and debit cards — Visa, Mastercard, American Express</li>
-              <li>E-transfer</li>
-              <li>All transactions are processed securely. We do not store complete card details.</li>
-            </ul>
-          </div>
-          <div class="pol-group">
-            <h4>Payment Timing</h4>
-            <ul class="pol-list">
-              <li>Payment is due upon completion of service, unless otherwise agreed in writing.</li>
-              <li>Large or estate jobs may require a deposit upfront. Deposits are applied toward your final invoice.</li>
-              <li>Failed or declined payments must be resolved within 48 hours to avoid service suspension.</li>
-            </ul>
-          </div>
-          <div class="pol-group">
-            <h4>Refunds &amp; Disputes</h4>
-            <ul class="pol-list">
-              <li>Dissatisfied with your service? Contact us within <strong>24 hours</strong> of completion and we'll make it right.</li>
-              <li>Refunds on completed services are issued only in cases of confirmed service failure.</li>
-              <li>Billing disputes must be raised within <strong>7 days</strong> of your invoice date.</li>
-            </ul>
-          </div>
-          <div class="pol-group">
-            <h4>Tips</h4>
-            <ul class="pol-list">
-              <li>Gratuities are never expected but always appreciated — they go directly to your crew.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ══════════ FOOTER ══════════ -->
-<footer>
-  <div class="container">
-    <div class="foot-grid">
-      <div>
-        <div class="foot-logo">Clear<span>Bay</span></div>
-        <p class="foot-desc">
-          Full garage cleanout and deep-clean service for North Vancouver,
-          West Vancouver, and Burnaby homeowners.
-        </p>
-        <div class="foot-contact">
-          <!-- TODO: Replace with real phone number -->
-          <a href="tel:+16045550100">
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-              <path d="M3 2h3l1.5 3.5-2 1.5a9.5 9.5 0 004.5 4.5l1.5-2L15 11v3a2 2 0 01-2 2A14 14 0 012 4a2 2 0 012-2z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
-            </svg>
-            (604) 555-0100
-          </a>
-          <!-- TODO: Replace with real email -->
-          <a href="mailto:hello@clearbay.ca">
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-              <rect x="1" y="3" width="14" height="10" rx="2" stroke="currentColor" stroke-width="1.4"/>
-              <path d="M1 5l7 5 7-5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
-            </svg>
-            hello@clearbay.ca
-          </a>
-        </div>
-      </div>
-      <div class="foot-col">
-        <h4>Service</h4>
-        <ul class="foot-links">
-          <li><a href="#how">How It Works</a></li>
-          <li><a href="#included">What's Included</a></li>
-          <li><a href="#pricing">Pricing</a></li>
-          <li><a href="#policies">Policies</a></li>
-          <li><a href="#quote">Get a Quote</a></li>
-        </ul>
-      </div>
-      <div class="foot-col">
-        <h4>Areas Served</h4>
-        <ul class="foot-links">
-          <li><a href="#quote">North Vancouver</a></li>
-          <li><a href="#quote">West Vancouver</a></li>
-          <li><a href="#quote">Burnaby</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="foot-bottom">
-      <!-- TODO: Update year if needed -->
-      <span class="foot-copy">&copy; 2026 ClearBay. All rights reserved.</span>
-      <span class="foot-copy">Fully insured &middot; Locally owned</span>
-    </div>
-  </div>
-</footer>
-
+<script src="shared.js"></script>
 <script>
-  /* ── Form submit ── */
   function submitQuote() {
-    var ph   = document.getElementById('ph').value.trim();
+    var ph = document.getElementById('ph').value.trim();
     var area = document.getElementById('area').value;
-    var sz   = document.getElementById('sz').value;
-    if (!ph || !area || !sz) {
-      alert('Please fill in your phone number, area, and garage size.');
-      return;
-    }
+    var sz = document.getElementById('sz').value;
+    if (!ph || !area || !sz) { alert('Please fill in your phone, area, and garage size.'); return; }
     document.getElementById('form-body').style.display = 'none';
-    document.getElementById('success').style.display   = 'block';
+    document.getElementById('success').style.display = 'block';
   }
-
-  /* ── Policy accordion ── */
-  function toggleAc(id) {
-    var item = document.getElementById(id);
-    var isOpen = item.classList.contains('open');
-    document.querySelectorAll('.ac-item').forEach(function(el) {
-      el.classList.remove('open');
-      el.querySelector('.ac-trigger').setAttribute('aria-expanded', 'false');
-    });
-    if (!isOpen) {
-      item.classList.add('open');
-      item.querySelector('.ac-trigger').setAttribute('aria-expanded', 'true');
-    }
-  }
-
-  /* ── Scroll fade-in ── */
-  var obs = new IntersectionObserver(function(entries) {
-    entries.forEach(function(e) {
-      if (e.isIntersecting) e.target.classList.add('on');
-    });
-  }, { threshold: 0.1 });
-
-  document.querySelectorAll('.fi').forEach(function(el) { obs.observe(el); });
 </script>
-
 </body>
 </html>

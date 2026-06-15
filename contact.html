@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — GarageClean</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+    .info-block { display: flex; flex-direction: column; gap: 28px; margin-top: 36px; }
+    .info-item { display: flex; align-items: flex-start; gap: 16px; }
+    .info-icon { width: 44px; height: 44px; background: var(--bg); border-radius: 11px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .info-item h4 { font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
+    .info-item p, .info-item a { font-size: 15px; color: var(--muted); text-decoration: none; line-height: 1.55; }
+    .info-item a:hover { color: var(--blue); }
+    .qform { background: #fff; border-radius: 18px; padding: 42px; box-shadow: var(--sh-lg); }
+    .fsub { width: 100%; padding: 17px; font-size: 16px; margin-top: 6px; border-radius: 10px; justify-content: center; }
+    #success { display: none; text-align: center; padding: 48px 20px; }
+    .s-icon { width: 64px; height: 64px; background: #E8F5E9; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; }
+    #success h3 { font-size: 24px; font-weight: 800; color: var(--navy); margin-bottom: 10px; }
+    #success p  { font-size: 15px; color: var(--muted); }
+    .areas { display: flex; flex-direction: column; gap: 10px; margin-top: 36px; }
+    .area-tag { display: inline-flex; align-items: center; gap: 8px; background: var(--bg); border-radius: 8px; padding: 10px 16px; font-size: 14px; font-weight: 500; color: var(--navy); }
+    @media (max-width: 900px) { .contact-grid { grid-template-columns: 1fr; gap: 48px; } }
+  </style>
+</head>
+<body>
+
+<div id="nav-placeholder"></div>
+
+<div class="page-header">
+  <div class="container">
+    <div class="label">Get in Touch</div>
+    <h1 class="h2">Request your free quote.</h1>
+    <p class="sub">Fill in the form and we'll get back to you within 24 hours with a flat, transparent quote — no obligation.</p>
+  </div>
+</div>
+
+<section>
+  <div class="container">
+    <div class="contact-grid">
+
+      <div class="fi">
+        <div class="label">Contact Info</div>
+        <h2 class="h2">We'd love to hear from you.</h2>
+        <div class="info-block">
+          <div class="info-item">
+            <div class="info-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M3 2h3l1.5 3.5-2 1.5a9.5 9.5 0 004.5 4.5l1.5-2L15 9v3a2 2 0 01-2 2A14 14 0 012 4a2 2 0 012-2h-.5z" stroke="#2E7DD1" stroke-width="1.5" stroke-linejoin="round"/></svg></div>
+            <div>
+              <h4>Phone</h4>
+              <!-- TODO: Replace with real phone number -->
+              <a href="tel:+16045550100">(604) 555-0100</a>
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="info-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="1" y="4" width="18" height="13" rx="2" stroke="#2E7DD1" stroke-width="1.5"/><path d="M1 7l9 6 9-6" stroke="#2E7DD1" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+            <div>
+              <h4>Email</h4>
+              <!-- TODO: Replace with real email -->
+              <a href="mailto:hello@garageclean.ca">hello@garageclean.ca</a>
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="info-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8" stroke="#2E7DD1" stroke-width="1.5"/><path d="M10 6v4l3 2" stroke="#2E7DD1" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+            <div>
+              <h4>Response Time</h4>
+              <p>Within 24 hours — usually much faster.</p>
+            </div>
+          </div>
+        </div>
+        <div style="margin-top:40px">
+          <div class="label">Areas Served</div>
+          <div class="areas">
+            <div class="area-tag"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1.5C5.07 1.5 3.5 3.07 3.5 5c0 2.8 3.5 6.5 3.5 6.5s3.5-3.7 3.5-6.5c0-1.93-1.57-3.5-3.5-3.5z" fill="#2E7DD1"/></svg>North Vancouver</div>
+            <div class="area-tag"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1.5C5.07 1.5 3.5 3.07 3.5 5c0 2.8 3.5 6.5 3.5 6.5s3.5-3.7 3.5-6.5c0-1.93-1.57-3.5-3.5-3.5z" fill="#2E7DD1"/></svg>West Vancouver</div>
+            <div class="area-tag"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1.5C5.07 1.5 3.5 3.07 3.5 5c0 2.8 3.5 6.5 3.5 6.5s3.5-3.7 3.5-6.5c0-1.93-1.57-3.5-3.5-3.5z" fill="#2E7DD1"/></svg>Burnaby</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="fi" style="transition-delay:.15s">
+        <div class="qform">
+          <div id="form-body">
+            <div class="frow">
+              <div class="fgrp"><label for="fn">First name</label><input type="text" id="fn" placeholder="John" autocomplete="given-name"></div>
+              <div class="fgrp"><label for="ln">Last name</label><input type="text" id="ln" placeholder="Smith" autocomplete="family-name"></div>
+            </div>
+            <div class="frow">
+              <div class="fgrp"><label for="ph">Phone *</label><input type="tel" id="ph" placeholder="(604) 555-0100"></div>
+              <div class="fgrp"><label for="em">Email</label><input type="email" id="em" placeholder="john@email.com"></div>
+            </div>
+            <div class="fgrp"><label for="addr">Address / Street</label><input type="text" id="addr" placeholder="123 Marine Dr, West Vancouver"></div>
+            <div class="fgrp"><label for="area">Your area *</label><select id="area"><option value="" disabled selected>Select your area</option><option>North Vancouver</option><option>West Vancouver</option><option>Burnaby</option><option>Other / Not sure</option></select></div>
+            <div class="fgrp"><label for="pkg">Package interest</label><select id="pkg"><option value="" disabled selected>Which package? (optional)</option><option>Basic Refresh ($399–$699)</option><option>Premium Garage Transformation ($1,000–$3,000+)</option><option>Estate / Downsizing ($2,000–$10,000+)</option><option>Not sure — need a recommendation</option></select></div>
+            <div class="fgrp"><label for="sz">Garage size *</label><select id="sz"><option value="" disabled selected>Select size</option><option>1-car garage</option><option>2-car garage</option><option>3+ car / estate</option><option>Not sure</option></select></div>
+            <div class="fgrp"><label for="msg">Tell us about your garage <span style="font-weight:400;color:var(--muted)">(optional)</span></label><textarea id="msg" placeholder="How long since it was last cleaned, any specific concerns, best time to call..."></textarea></div>
+            <button type="button" class="btn btn-primary fsub" onclick="submitQuote()">Request My Free Quote <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          </div>
+          <div id="success">
+            <div class="s-icon"><svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M6 16l7 7 13-13" stroke="#2E7D32" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <h3>You're all set.</h3>
+            <p>We'll text you within 24 hours with your free quote. Talk soon.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div id="footer-placeholder"></div>
+<script src="shared.js"></script>
+<script>
+  function submitQuote() {
+    var ph = document.getElementById('ph').value.trim();
+    var area = document.getElementById('area').value;
+    var sz = document.getElementById('sz').value;
+    if (!ph || !area || !sz) { alert('Please fill in your phone, area, and garage size.'); return; }
+    document.getElementById('form-body').style.display = 'none';
+    document.getElementById('success').style.display = 'block';
+  }
+</script>
+</body>
+</html>
