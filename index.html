@@ -366,6 +366,64 @@
     .foot-copy { font-size: 13px; color: rgba(255,255,255,.25); }
 
     /* ════════════════════════════════
+       POLICIES
+    ════════════════════════════════ */
+    #policies { background: var(--bg); }
+    .policies-head { text-align: center; margin-bottom: 56px; }
+    .policies-head .sub { margin: 0 auto; }
+    .accord { display: flex; flex-direction: column; gap: 12px; max-width: 820px; margin: 0 auto; }
+    .ac-item {
+      background: #fff; border-radius: var(--r);
+      box-shadow: var(--sh); overflow: hidden;
+      border: 1.5px solid transparent; transition: border-color .2s;
+    }
+    .ac-item.open { border-color: var(--border); }
+    .ac-trigger {
+      width: 100%; display: flex; align-items: center; justify-content: space-between;
+      padding: 24px 28px; background: none; border: none;
+      cursor: pointer; font-family: inherit; text-align: left; gap: 16px;
+    }
+    .ac-trigger-left { display: flex; align-items: center; gap: 16px; }
+    .ac-icon-wrap {
+      width: 40px; height: 40px; flex-shrink: 0;
+      background: var(--bg); border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .ac-title { font-size: 17px; font-weight: 700; color: var(--navy); }
+    .ac-subtitle { font-size: 13px; color: var(--muted); margin-top: 2px; }
+    .ac-chevron {
+      width: 20px; height: 20px; flex-shrink: 0; color: var(--muted);
+      transition: transform .25s ease;
+    }
+    .ac-item.open .ac-chevron { transform: rotate(180deg); }
+    .ac-body {
+      display: none; padding: 0 28px 28px;
+    }
+    .ac-item.open .ac-body { display: block; }
+    .ac-divider {
+      border: none; border-top: 1px solid var(--border); margin-bottom: 24px;
+    }
+    .pol-group { margin-bottom: 22px; }
+    .pol-group:last-child { margin-bottom: 0; }
+    .pol-group h4 {
+      font-size: 13px; font-weight: 700; letter-spacing: .06em;
+      text-transform: uppercase; color: var(--blue); margin-bottom: 10px;
+    }
+    .pol-list { list-style: none; display: flex; flex-direction: column; gap: 9px; }
+    .pol-list li {
+      font-size: 14px; color: #3A5570; line-height: 1.58;
+      padding-left: 16px; position: relative;
+    }
+    .pol-list li::before {
+      content: ''; position: absolute; left: 0; top: 8px;
+      width: 5px; height: 5px; background: var(--blue); border-radius: 50%;
+    }
+    .pol-note {
+      font-size: 13px; color: var(--muted); line-height: 1.6;
+      background: var(--bg); border-radius: 8px; padding: 14px 16px; margin-top: 16px;
+    }
+
+    /* ════════════════════════════════
        FADE-IN ANIMATION
     ════════════════════════════════ */
     .fi {
@@ -409,6 +467,7 @@
       <ul class="nav-links">
         <li><a href="#how">How It Works</a></li>
         <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#policies">Policies</a></li>
         <li><a href="#quote">Quote</a></li>
       </ul>
       <a href="#quote" class="btn btn-primary nav-cta">Get a Quote</a>
@@ -888,6 +947,235 @@
   </div>
 </section>
 
+<!-- ══════════ POLICIES ══════════ -->
+<section id="policies">
+  <div class="container">
+    <div class="policies-head fi">
+      <div class="label">Policies</div>
+      <h2 class="h2">Clear terms. No surprises.</h2>
+      <p class="sub">We believe in full transparency. Here's exactly how we operate so you always know what to expect.</p>
+    </div>
+    <div class="accord fi">
+
+      <!-- Booking & Cancellation -->
+      <div class="ac-item" id="pol-booking">
+        <button class="ac-trigger" onclick="toggleAc('pol-booking')" aria-expanded="false">
+          <div class="ac-trigger-left">
+            <div class="ac-icon-wrap">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <rect x="2" y="3" width="16" height="15" rx="2" stroke="#2E7DD1" stroke-width="1.5"/>
+                <path d="M6 1v4M14 1v4M2 8h16" stroke="#2E7DD1" stroke-width="1.5" stroke-linecap="round"/>
+                <path d="M6 12h4M6 15h2" stroke="#2E7DD1" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div>
+              <div class="ac-title">Booking &amp; Cancellation</div>
+              <div class="ac-subtitle">How to book, cancel, or reschedule</div>
+            </div>
+          </div>
+          <svg class="ac-chevron" viewBox="0 0 20 20" fill="none">
+            <path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <div class="ac-body">
+          <hr class="ac-divider">
+          <div class="pol-group">
+            <h4>Booking</h4>
+            <ul class="pol-list">
+              <li>Book via our website form, phone, or email — subject to availability and confirmation.</li>
+              <li>Please provide accurate details about your garage size, condition, and any special requirements. Inaccurate information may result in price adjustments or rescheduling.</li>
+              <li>You'll receive a confirmation by email or text once your appointment is reserved. A deposit may be required for large or estate jobs.</li>
+            </ul>
+          </div>
+          <div class="pol-group">
+            <h4>Cancellations &amp; Rescheduling</h4>
+            <ul class="pol-list">
+              <li>Cancellations and reschedule requests must be made at least <strong>24 hours before</strong> your scheduled appointment.</li>
+              <li>Cancellations with less than 24 hours' notice may incur a cancellation fee.</li>
+              <li>Same-day cancellations or no-shows may be charged up to $150 of the service cost. Repeat no-shows may result in refusal of future bookings.</li>
+              <li>If you can't provide access to your property (wrong instructions, locked gate, no answer), the visit may be treated as a cancellation and a lockout fee will apply.</li>
+            </ul>
+          </div>
+          <div class="pol-group">
+            <h4>Deposits</h4>
+            <ul class="pol-list">
+              <li>Deposits are applied toward your final service cost.</li>
+              <li>Deposits are non-refundable if you cancel outside the allowed cancellation window.</li>
+              <li>Prepaid services cancelled within policy may be credited toward a future booking.</li>
+            </ul>
+          </div>
+          <div class="pol-group">
+            <h4>If We Need to Cancel</h4>
+            <ul class="pol-list">
+              <li>We'll notify you as soon as possible if we need to cancel due to weather, emergencies, or unforeseen circumstances.</li>
+              <li>You may reschedule or receive a full refund or credit — your choice.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scope of Work -->
+      <div class="ac-item" id="pol-scope">
+        <button class="ac-trigger" onclick="toggleAc('pol-scope')" aria-expanded="false">
+          <div class="ac-trigger-left">
+            <div class="ac-icon-wrap">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path d="M4 5h12M4 9h8M4 13h10M4 17h6" stroke="#2E7DD1" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div>
+              <div class="ac-title">Scope of Work</div>
+              <div class="ac-subtitle">What's included and what's not</div>
+            </div>
+          </div>
+          <svg class="ac-chevron" viewBox="0 0 20 20" fill="none">
+            <path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <div class="ac-body">
+          <hr class="ac-divider">
+          <div class="pol-group">
+            <h4>What's Included in Every Job</h4>
+            <ul class="pol-list">
+              <li>Complete empty-out — everything staged in your driveway</li>
+              <li>Dust and cobweb removal from walls, ceiling, joists, and all accessible surfaces</li>
+              <li>Full floor scrub and sweep</li>
+              <li>Shelf and storage unit wipe-down</li>
+              <li>Junk haul-away — we dispose of or donate everything you don't want</li>
+              <li>Full re-organization of everything you're keeping</li>
+            </ul>
+          </div>
+          <div class="pol-group">
+            <h4>Not Included in Standard Service</h4>
+            <ul class="pol-list">
+              <li>Mold remediation or biohazard cleanup</li>
+              <li>Hazardous materials removal (paint, chemicals, fuel)</li>
+              <li>Post-construction debris removal</li>
+              <li>Exterior garage cleaning or high-reach areas not safely accessible</li>
+              <li>Deep stain removal or floor restoration beyond standard cleaning</li>
+            </ul>
+            <div class="pol-note">Need something not listed? Just ask when you request your quote — we'll let you know if we can accommodate it and what it would cost.</div>
+          </div>
+          <div class="pol-group">
+            <h4>Quality &amp; Concerns</h4>
+            <ul class="pol-list">
+              <li>Results depend on the current condition of your garage. We can't guarantee removal of permanent stains or damage beyond normal cleaning standards.</li>
+              <li>If you have concerns about the completed work, notify us within <strong>24 hours</strong> of service completion. We'll review and re-clean any affected areas that fall within the original scope.</li>
+              <li>Any changes to scope during the job require approval and may incur additional charges or rescheduling depending on crew availability.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Damage Policy -->
+      <div class="ac-item" id="pol-damage">
+        <button class="ac-trigger" onclick="toggleAc('pol-damage')" aria-expanded="false">
+          <div class="ac-trigger-left">
+            <div class="ac-icon-wrap">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path d="M10 2L3 7v11h14V7L10 2z" stroke="#2E7DD1" stroke-width="1.5" stroke-linejoin="round"/>
+                <path d="M10 10v4M10 8v.5" stroke="#2E7DD1" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div>
+              <div class="ac-title">Damage Policy</div>
+              <div class="ac-subtitle">Coverage, reporting, and resolution</div>
+            </div>
+          </div>
+          <svg class="ac-chevron" viewBox="0 0 20 20" fill="none">
+            <path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <div class="ac-body">
+          <hr class="ac-divider">
+          <div class="pol-group">
+            <h4>Our Commitment</h4>
+            <ul class="pol-list">
+              <li>ClearBay is fully insured. We treat your property with care and take full responsibility for any accidental damage caused directly by our crew during a scheduled service.</li>
+              <li>Covered damage includes: breakage caused by our team, scratches or cracks from our tools or equipment, and damage from improper product use.</li>
+            </ul>
+          </div>
+          <div class="pol-group">
+            <h4>What's Not Covered</h4>
+            <ul class="pol-list">
+              <li>Pre-existing wear, damage, or deterioration present before our arrival</li>
+              <li>Fragile or improperly secured items that were not disclosed to us in advance</li>
+              <li>Electronics, unless we were specifically asked to handle them</li>
+              <li>Water or plumbing-related damage unrelated to our cleaning</li>
+              <li>Items of extraordinary value not disclosed prior to the job</li>
+            </ul>
+          </div>
+          <div class="pol-group">
+            <h4>Reporting Damage</h4>
+            <ul class="pol-list">
+              <li>Any damage must be reported within <strong>24 hours</strong> of service completion, with clear photos and a written description.</li>
+              <li>Failure to report within this window may void coverage.</li>
+              <li>We'll investigate and resolve claims by repairing, replacing, or issuing a service credit — capped at the current market value of the item. Our total liability is capped at the cost of the service provided.</li>
+            </ul>
+          </div>
+          <div class="pol-note">To protect both parties, please secure or remove valuables and fragile items before we arrive, and let us know about any surfaces requiring special care.</div>
+        </div>
+      </div>
+
+      <!-- Payment Policy -->
+      <div class="ac-item" id="pol-payment">
+        <button class="ac-trigger" onclick="toggleAc('pol-payment')" aria-expanded="false">
+          <div class="ac-trigger-left">
+            <div class="ac-icon-wrap">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <rect x="1" y="5" width="18" height="12" rx="2" stroke="#2E7DD1" stroke-width="1.5"/>
+                <path d="M1 9h18" stroke="#2E7DD1" stroke-width="1.5"/>
+                <rect x="4" y="12" width="4" height="2" rx="1" fill="#2E7DD1"/>
+              </svg>
+            </div>
+            <div>
+              <div class="ac-title">Payment Policy</div>
+              <div class="ac-subtitle">Methods, timing, and refunds</div>
+            </div>
+          </div>
+          <svg class="ac-chevron" viewBox="0 0 20 20" fill="none">
+            <path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <div class="ac-body">
+          <hr class="ac-divider">
+          <div class="pol-group">
+            <h4>Accepted Payment Methods</h4>
+            <ul class="pol-list">
+              <li>Credit and debit cards — Visa, Mastercard, American Express</li>
+              <li>E-transfer</li>
+              <li>All transactions are processed securely. We do not store complete card details.</li>
+            </ul>
+          </div>
+          <div class="pol-group">
+            <h4>Payment Timing</h4>
+            <ul class="pol-list">
+              <li>Payment is due upon completion of service, unless otherwise agreed in writing.</li>
+              <li>Large or estate jobs may require a deposit upfront. Deposits are applied toward your final invoice.</li>
+              <li>Failed or declined payments must be resolved within 48 hours to avoid service suspension.</li>
+            </ul>
+          </div>
+          <div class="pol-group">
+            <h4>Refunds &amp; Disputes</h4>
+            <ul class="pol-list">
+              <li>Dissatisfied with your service? Contact us within <strong>24 hours</strong> of completion and we'll make it right.</li>
+              <li>Refunds on completed services are issued only in cases of confirmed service failure.</li>
+              <li>Billing disputes must be raised within <strong>7 days</strong> of your invoice date.</li>
+            </ul>
+          </div>
+          <div class="pol-group">
+            <h4>Tips</h4>
+            <ul class="pol-list">
+              <li>Gratuities are never expected but always appreciated — they go directly to your crew.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <!-- ══════════ FOOTER ══════════ -->
 <footer>
   <div class="container">
@@ -922,6 +1210,7 @@
           <li><a href="#how">How It Works</a></li>
           <li><a href="#included">What's Included</a></li>
           <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#policies">Policies</a></li>
           <li><a href="#quote">Get a Quote</a></li>
         </ul>
       </div>
@@ -954,6 +1243,20 @@
     }
     document.getElementById('form-body').style.display = 'none';
     document.getElementById('success').style.display   = 'block';
+  }
+
+  /* ── Policy accordion ── */
+  function toggleAc(id) {
+    var item = document.getElementById(id);
+    var isOpen = item.classList.contains('open');
+    document.querySelectorAll('.ac-item').forEach(function(el) {
+      el.classList.remove('open');
+      el.querySelector('.ac-trigger').setAttribute('aria-expanded', 'false');
+    });
+    if (!isOpen) {
+      item.classList.add('open');
+      item.querySelector('.ac-trigger').setAttribute('aria-expanded', 'true');
+    }
   }
 
   /* ── Scroll fade-in ── */
