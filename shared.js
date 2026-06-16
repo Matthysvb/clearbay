@@ -43,7 +43,7 @@
     '        <div class="foot-logo">Garage<span>Clean</span></div>',
     '        <p class="foot-desc">Full garage cleanout and deep-clean service for North Vancouver, West Vancouver, and Burnaby homeowners.</p>',
     '        <div class="foot-contact">',
-    '          <a href="tel:+16045550100"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 2h3l1.5 3.5-2 1.5a9.5 9.5 0 004.5 4.5l1.5-2L15 11v3a2 2 0 01-2 2A14 14 0 012 4a2 2 0 012-2z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>(604) 555-0100</a>',
+    '          <a href="tel:+16043542666"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 2h3l1.5 3.5-2 1.5a9.5 9.5 0 004.5 4.5l1.5-2L15 11v3a2 2 0 01-2 2A14 14 0 012 4a2 2 0 012-2z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>(604) 354-2666</a>',
     '          <a href="mailto:hello@garageclean.ca"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="1" y="3" width="14" height="10" rx="2" stroke="currentColor" stroke-width="1.4"/><path d="M1 5l7 5 7-5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>hello@garageclean.ca</a>',
     '        </div>',
     '      </div>',
